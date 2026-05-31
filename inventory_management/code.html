@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Work+Sans:wght@400;500;700&amp;family=Newsreader:wght@700&amp;family=Be+Vietnam+Pro:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "text-black": "rgba(0, 0, 0, 0.87)",
+                    "on-primary-container": "#8bdbb1",
+                    "surface-container-low": "#f1f5ef",
+                    "inverse-surface": "#2d312e",
+                    "text-white": "rgba(255, 255, 255, 1)",
+                    "secondary-container": "#97f6c0",
+                    "on-secondary": "#ffffff",
+                    "neutral-cool": "#F9F9F9",
+                    "on-primary-fixed-variant": "#005235",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "tertiary-fixed": "#ffdad7",
+                    "error-red": "#C82014",
+                    "primary-container": "#006241",
+                    "gold-light": "#DFC49D",
+                    "secondary": "#006c44",
+                    "on-secondary-fixed": "#002112",
+                    "green-uplift": "#2B5148",
+                    "background": "#f7faf5",
+                    "text-black-soft": "rgba(0, 0, 0, 0.58)",
+                    "tertiary": "#6b2927",
+                    "gold-lightest": "#FAF6EE",
+                    "green-light": "#D4E9E2",
+                    "surface-variant": "#e0e3de",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#883f3c",
+                    "on-tertiary-fixed": "#3d0608",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#87d7ad",
+                    "surface": "#f7faf5",
+                    "text-white-soft": "rgba(255, 255, 255, 0.70)",
+                    "on-secondary-fixed-variant": "#005232",
+                    "on-primary": "#ffffff",
+                    "primary": "#00482f",
+                    "house-green": "#1E3932",
+                    "ceramic": "#EDEBE9",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#007349",
+                    "on-background": "#181d1a",
+                    "primary-fixed-dim": "#87d7ad",
+                    "on-surface-variant": "#3f4943",
+                    "warning-yellow": "#FBBC05",
+                    "outline": "#6f7a72",
+                    "inverse-on-surface": "#eef2ec",
+                    "on-tertiary-container": "#ffb9b4",
+                    "rewards-green-text": "#33433D",
+                    "secondary-fixed": "#97f6c0",
+                    "error": "#ba1a1a",
+                    "surface-container": "#ebefea",
+                    "surface-container-highest": "#e0e3de",
+                    "outline-variant": "#bec9c0",
+                    "surface-dim": "#d7dbd6",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#76312f",
+                    "neutral-warm": "#F2F0EB",
+                    "secondary-fixed-dim": "#7cd9a5",
+                    "on-primary-fixed": "#002113",
+                    "surface-tint": "#146b4a",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e6e9e4",
+                    "primary-fixed": "#a2f3c8",
+                    "gold": "#CBA258",
+                    "surface-bright": "#f7faf5",
+                    "on-surface": "#181d1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "gutter": "16px",
+                    "base": "4px",
+                    "xl": "64px",
+                    "sm": "16px",
+                    "xs": "8px",
+                    "lg": "40px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "h2-section": ["Plus Jakarta Sans"],
+                    "body-sm": ["Work Sans"],
+                    "h1-brand": ["Plus Jakarta Sans"],
+                    "body-main": ["Work Sans"],
+                    "script-accent": ["Be Vietnam Pro"],
+                    "display-hero": ["Newsreader"],
+                    "label-caps": ["Work Sans"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #F2F0EB; /* neutral-warm */
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-text-black">
+<!-- TopNavBar -->
+<header class="bg-white border-b border-stone-200 flex justify-between items-center w-full px-6 h-16 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black text-emerald-900 font-h1-brand">Inventory Manager</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex relative">
+<input class="bg-ceramic border-none rounded-full px-10 py-2 text-sm font-body-sm w-64 focus:ring-2 focus:ring-primary" placeholder="Search inventory..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-2 text-stone-500">search</span>
+</div>
+<div class="flex items-center gap-4 text-stone-600">
+<span class="material-symbols-outlined cursor-pointer hover:bg-stone-100 p-2 rounded-full transition-colors">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-stone-100 p-2 rounded-full transition-colors">account_circle</span>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-64 bg-stone-50 border-r border-stone-200 py-6 sticky top-16">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-800">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">store</span>
+</div>
+<div>
+<h3 class="font-bold text-sm font-h2-section text-emerald-900">Store #4829</h3>
+<p class="text-xs text-stone-500 font-body-sm">Downtown Seattle</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-6 py-3 bg-emerald-50 text-emerald-800 border-r-4 border-emerald-700 font-medium transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-body-main text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-stone-600 hover:bg-stone-100 hover:text-emerald-700 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-main text-sm">Stock</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-stone-600 hover:bg-stone-100 hover:text-emerald-700 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-body-main text-sm">Suppliers</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-stone-600 hover:bg-stone-100 hover:text-emerald-700 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-main text-sm">Reports</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full bg-primary text-white py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
+                    Order Supplies
+                </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-md md:p-lg bg-neutral-warm">
+<!-- Header Section -->
+<div class="mb-lg">
+<h1 class="text-h1-brand font-h1-brand text-emerald-900">Inventory Overview</h1>
+<p class="text-body-main font-body-main text-text-black-soft">Live stock levels for Store #4829</p>
+</div>
+<!-- Bento Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md mb-lg">
+<!-- Low Stock Card -->
+<div class="bg-white p-6 rounded-xl border border-ceramic shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-error-red bg-error-container p-2 rounded-lg">warning</span>
+<span class="text-xs font-bold font-label-caps text-error-red bg-error-container px-2 py-1 rounded-full">URGENT</span>
+</div>
+<p class="text-sm font-body-sm text-text-black-soft">Low Stock Items</p>
+<h2 class="text-3xl font-bold font-h1-brand text-text-black">12</h2>
+<p class="text-xs mt-2 text-stone-500 font-body-sm">4 critical reorder points</p>
+</div>
+<!-- Pending Deliveries Card -->
+<div class="bg-white p-6 rounded-xl border border-ceramic shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-emerald-700 bg-green-light p-2 rounded-lg">local_shipping</span>
+<span class="text-xs font-bold font-label-caps text-emerald-800 bg-green-light px-2 py-1 rounded-full">IN TRANSIT</span>
+</div>
+<p class="text-sm font-body-sm text-text-black-soft">Pending Deliveries</p>
+<h2 class="text-3xl font-bold font-h1-brand text-text-black">08</h2>
+<p class="text-xs mt-2 text-stone-500 font-body-sm">Next arrival: 2:00 PM today</p>
+</div>
+<!-- Total Value Card -->
+<div class="bg-white p-6 rounded-xl border border-ceramic shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-gold-light bg-gold-lightest p-2 rounded-lg">account_balance_wallet</span>
+</div>
+<p class="text-sm font-body-sm text-text-black-soft">Inventory Value</p>
+<h2 class="text-3xl font-bold font-h1-brand text-text-black">$14,285.50</h2>
+<p class="text-xs mt-2 text-emerald-600 font-body-sm">+2.4% from last week</p>
+</div>
+</div>
+<!-- Inventory Table Section -->
+<section class="bg-white rounded-xl border border-ceramic overflow-hidden shadow-sm">
+<div class="p-6 border-b border-stone-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<h3 class="text-h2-section font-h2-section text-emerald-900">Current Stock List</h3>
+<div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
+<button class="px-4 py-2 bg-stone-100 rounded-full text-xs font-bold font-label-caps hover:bg-stone-200 transition-colors">ALL ITEMS</button>
+<button class="px-4 py-2 bg-white border border-stone-200 rounded-full text-xs font-bold font-label-caps text-stone-500 hover:border-emerald-700 transition-colors">BEANS</button>
+<button class="px-4 py-2 bg-white border border-stone-200 rounded-full text-xs font-bold font-label-caps text-stone-500 hover:border-emerald-700 transition-colors">DAIRY</button>
+<button class="px-4 py-2 bg-white border border-stone-200 rounded-full text-xs font-bold font-label-caps text-stone-500 hover:border-emerald-700 transition-colors">SYRUPS</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-main">
+<thead class="bg-stone-50 text-stone-500 text-xs font-bold font-label-caps uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4">Item Name</th>
+<th class="px-6 py-4">Category</th>
+<th class="px-6 py-4">Stock Level</th>
+<th class="px-6 py-4">Unit</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-stone-100">
+<!-- Row 1 -->
+<tr class="hover:bg-neutral-cool transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-stone-100 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up of roasted Starbucks espresso coffee beans in a burlap sack with warm studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2UW25M6cxfdYNl2ILSj-CkEWOkmojRHYS8kP-9WKgMsyWay3oeNcbMF6QQcX4qWNMbbbF8c3Z4WpVGJEZn8lNHsJLlIRVHYA2T-rqTEc5GIpi9cCAzFECxUKdONnYoiDp5oFBWKQhN4E9Hje5x4r9fKWHYdTMk2VERSibK3DWUrhdRBQAXYnTsn2xZ0ww-_c87jhF4tmAOmKIJVzKnC91UVLIBGkHrHNlSFFq6Ey-HVG3qitowjpYeHTswa1hJn9p9j4rxYkZ8h-_"/>
+</div>
+<div>
+<p class="font-bold text-text-black">Espresso Roast</p>
+<p class="text-xs text-stone-500">SKU: ESP-001</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-stone-600">Coffee Beans</td>
+<td class="px-6 py-4">
+<div class="w-full bg-stone-100 rounded-full h-2 w-32 relative overflow-hidden">
+<div class="bg-emerald-600 h-full w-4/5"></div>
+</div>
+<span class="text-xs mt-1 block">84 units</span>
+</td>
+<td class="px-6 py-4 text-sm">5lb Bags</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-light text-emerald-800">
+                                        Optimal
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-emerald-700 hover:text-emerald-900 font-bold text-sm">Edit</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-neutral-cool transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-stone-100 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Glass bottle of fresh whole milk on a rustic wooden table with soft morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANT9JGrHLhVzRsIC5Ppp6SGGwJFfKj2yoTr9ASDX7BpVXpMmZCdojdHind7hWk08izcIVNW-szmgcwaCbytpo6EGTCEjmB6FmCgo-MUDfzSanVfmlZYoN6INNMRKQf95RKySNsCxJHwsjCQ6eAy72aUadqN8Jw5wNkW2ve897QuYxfgvNr43CqP_hFlmhBrdpVDYou-GI1b_C2IcVJYgLSw6lYeMimFZ3wCcNFjyIEhpOor__bLR24Frzxn9CylAm_IMio3ymKb9av"/>
+</div>
+<div>
+<p class="font-bold text-text-black">Whole Milk</p>
+<p class="text-xs text-stone-500">SKU: DRY-042</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-stone-600">Dairy</td>
+<td class="px-6 py-4">
+<div class="w-full bg-stone-100 rounded-full h-2 w-32 relative overflow-hidden">
+<div class="bg-warning-yellow h-full w-1/4"></div>
+</div>
+<span class="text-xs mt-1 block">12 units</span>
+</td>
+<td class="px-6 py-4 text-sm">Gallons</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                                        Low Stock
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-emerald-700 hover:text-emerald-900 font-bold text-sm">Reorder</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-neutral-cool transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-stone-100 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Artisanal flaky croissant on a white ceramic plate with a blurred cafe background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtGgywhz_TB4i4sYyUbQWw-bE1iPZ2xvOIyPMG77WUeTvPLHVBZw4er0KiD-wjd5q4wLy6x3ozx1EKUSxv09hxGVaMrKB6YmDa-izjyB5WaH3iDJJUG-Z5wacUw9ILOuZTQn8BhwxiWHhn4iBhAG8m51U8lum5jwDELVsZXSHQycz--yi_pluUy5b5CM8JKJdhpiqKVVARgKyMA5h2vgWVfrhbyvSU7f4JTHctlw9MfuLpf-uDlacTJ_RAJL3BUP6ycJIpnOaa5izF"/>
+</div>
+<div>
+<p class="font-bold text-text-black">Butter Croissant</p>
+<p class="text-xs text-stone-500">SKU: PAS-112</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-stone-600">Pastries</td>
+<td class="px-6 py-4">
+<div class="w-full bg-stone-100 rounded-full h-2 w-32 relative overflow-hidden">
+<div class="bg-error-red h-full w-[10%]"></div>
+</div>
+<span class="text-xs mt-1 block">4 units</span>
+</td>
+<td class="px-6 py-4 text-sm">Trays</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-error-container text-error-red">
+                                        Critical
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-emerald-700 hover:text-emerald-900 font-bold text-sm">Emergency</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-neutral-cool transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-stone-100 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Elegant glass bottle of vanilla syrup with a professional pump dispenser on a marble counter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnqwuDHiTCs6HcH-ULfXYI2841pgBCZIOLNP3EFXGoqu5Y8lljvbzfOevz09Vnjvk0FyyOhdLqYsx6nUT00FiDGU2RYBLK2gaBf1npgzNXYTCDOYmboO0ZQZpFmeYudglEcZV7k169xAfIuWSu0aYrr1lFrl3TwYTtAj5dUhR3qMXx2mCEeLZqOoCOZhn9IcOk_0kvZ7CwITnqJlS-xbuCn3wUcwBCVfWYQT7VZMP-ZdCJfpzH66cKr2U3VmZ5qW8-PDff1Vsbr_6L"/>
+</div>
+<div>
+<p class="font-bold text-text-black">Vanilla Syrup</p>
+<p class="text-xs text-stone-500">SKU: SYR-009</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-stone-600">Syrups</td>
+<td class="px-6 py-4">
+<div class="w-full bg-stone-100 rounded-full h-2 w-32 relative overflow-hidden">
+<div class="bg-emerald-600 h-full w-2/3"></div>
+</div>
+<span class="text-xs mt-1 block">45 units</span>
+</td>
+<td class="px-6 py-4 text-sm">Bottles</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-light text-emerald-800">
+                                        Optimal
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-emerald-700 hover:text-emerald-900 font-bold text-sm">Edit</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-stone-50 flex items-center justify-between border-t border-stone-100">
+<span class="text-xs text-stone-500 font-body-sm">Showing 4 of 128 items</span>
+<div class="flex gap-2">
+<button class="p-2 border border-stone-200 rounded-lg hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-2 border border-stone-200 rounded-lg hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-emerald-900 text-white flex flex-col md:flex-row justify-between items-center px-8 py-6 w-full gap-4">
+<div class="text-xs font-plus-jakarta text-white-soft">
+            © 2024 Starbucks Coffee Company. All rights reserved.
+        </div>
+<div class="flex gap-6">
+<a class="text-xs font-plus-jakarta text-stone-300 hover:text-white underline" href="#">Privacy Policy</a>
+<a class="text-xs font-plus-jakarta text-stone-300 hover:text-white underline" href="#">Terms of Use</a>
+<a class="text-xs font-plus-jakarta text-stone-300 hover:text-white underline" href="#">Help Center</a>
+</div>
+</footer>
+<!-- FAB -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-50">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>
